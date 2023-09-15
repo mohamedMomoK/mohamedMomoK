@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+#pacman {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    clip-path: polygon(100% 100%, 100% 50%, 50% 50%);
+    animation: eat 0.2s steps(1) infinite;
+}
+
+.ghost {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+@keyframes eat {
+    0%, 100% {
+        clip-path: polygon(100% 100%, 100% 50%, 50% 50%);
+    }
+    50% {
+        clip-path: polygon(100% 100%, 100% 0, 50% 50%);
+    }
+}
